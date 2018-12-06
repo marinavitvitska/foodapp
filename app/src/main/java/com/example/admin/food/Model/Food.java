@@ -1,23 +1,27 @@
-package com.example.admin.foot.Model;
+package com.example.admin.food.Model;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Food {
-    private String Name, Image, Description, Price, Discount, MenuId, FoodId, AvailabilityFlag;
+    private String Name, Image, Description, Discount, MenuId, FoodId;
+
+    public List<Ingredient> Ingredients;
 
     public Food() {
+        Ingredients = new ArrayList<>();
     }
 
-    public Food(String name, String image, String description, String price, String discount,
-                String menuId, String foodId, String availabilityFlag) {
+    public Food(String name, String image, String description, String discount,
+            String menuId, String foodId, ArrayList<Ingredient> ingredients) {
         Name = name;
         Image = image;
         Description = description;
-        Price = price;
         Discount = discount;
         MenuId = menuId;
         FoodId = foodId;
-        AvailabilityFlag = availabilityFlag;
+        this.Ingredients = ingredients;
     }
-
-
 
     public String getName() {
         return Name;
@@ -41,14 +45,6 @@ public class Food {
 
     public void setDescription(String description) {
         Description = description;
-    }
-
-    public String getPrice() {
-        return Price;
-    }
-
-    public void setPrice(String price) {
-        Price = price;
     }
 
     public String getDiscount() {
@@ -75,11 +71,4 @@ public class Food {
         FoodId = foodId;
     }
 
-    public String getAvailabilityFlag() {
-        return AvailabilityFlag;
-    }
-
-    public void setAvailabilityFlag(String availabilityFlag) {
-        AvailabilityFlag = availabilityFlag;
-    }
 }

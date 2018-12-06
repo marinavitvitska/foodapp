@@ -1,4 +1,4 @@
-package com.example.admin.foot;
+package com.example.admin.food;
 
 import org.junit.Test;
 

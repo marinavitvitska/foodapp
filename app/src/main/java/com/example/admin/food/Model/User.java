@@ -1,4 +1,4 @@
-package com.example.admin.foot.Model;
+package com.example.admin.food.Model;
 
 public class User {
     private String Name;

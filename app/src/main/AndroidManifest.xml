@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.admin.foot">
+    package="com.example.admin.food">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -11,21 +11,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name="com.example.admin.food.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SignIn" />
-        <activity android:name=".SignUp" />
+        <activity android:name="com.example.admin.food.SignIn" />
+        <activity android:name="com.example.admin.food.SignUp" />
         <activity
-            android:name=".Home"
+            android:name="com.example.admin.food.Home"
             android:label="@string/title_activity_home"
             android:theme="@style/AppTheme" />
-        <activity android:name=".FoodDetail" />
-        <activity android:name=".FoodList" />
+        <activity android:name="com.example.admin.food.FoodDetail" />
+        <activity android:name="com.example.admin.food.foodlistactivity.FoodListActivity" />
         <activity android:name=".FoodList1"></activity>
     </application>
 

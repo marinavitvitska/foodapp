@@ -1,4 +1,4 @@
-package com.example.admin.foot;
+package com.example.admin.food;
 
 
 import android.app.ProgressDialog;
@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.example.admin.foot.Model.User;
+import com.example.admin.food.Model.User;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;

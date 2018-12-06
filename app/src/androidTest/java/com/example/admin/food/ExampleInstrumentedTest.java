@@ -1,4 +1,4 @@
-package com.example.admin.foot;
+package com.example.admin.food;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

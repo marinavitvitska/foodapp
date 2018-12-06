@@ -1,4 +1,4 @@
-package com.example.admin.foot.Model;
+package com.example.admin.food.Model;
 
 public class Category {
     private String Name;

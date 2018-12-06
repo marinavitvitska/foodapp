@@ -1,11 +1,11 @@
-package com.example.admin.foot.Database;
+package com.example.admin.food.Database;
 
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteQueryBuilder;
 
-import com.example.admin.foot.Model.Order;
+import com.example.admin.food.Model.Order;
 
 import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
 
@@ -27,18 +27,18 @@ public class Database extends SQLiteAssetHelper {
         String sqlTable = "OrderDetail";
 
         qb.setTables(sqlTable);
-        Cursor c = qb.query(db, sqlSelect, null, null, null, null, null);
+        Cursor cursor = qb.query(db, sqlSelect, null, null, null, null, null);
 
         final List<Order> result = new ArrayList<>();
-        if(c.moveToFirst()){
+        if(cursor.moveToFirst()){
             do{
-                result.add(new Order(c.getString(c.getColumnIndex("ProductId")),
-                        c.getString(c.getColumnIndex("ProductName")),
-                        c.getString(c.getColumnIndex("Quantity")),
-                        c.getString(c.getColumnIndex("Price")),
-                        c.getString(c.getColumnIndex("Discount"))
+                result.add(new Order(cursor.getString(cursor.getColumnIndex("ProductId")),
+                        cursor.getString(cursor.getColumnIndex("ProductName")),
+                        cursor.getString(cursor.getColumnIndex("Quantity")),
+                        cursor.getString(cursor.getColumnIndex("Price")),
+                        cursor.getString(cursor.getColumnIndex("Discount"))
                 ));
-            }while (c.moveToNext());
+            }while (cursor.moveToNext());
         }
         return result;
     }

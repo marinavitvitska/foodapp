@@ -1,0 +1,164 @@
+{
+	"Category": {
+		"01": {
+			"Image": "https://media.istockphoto.com/photos/cook-taking-ready-chicken-from-the-oven-picture-id1036815628?b=1&k=6&m=1036815628&s=170667a&w=0&h=gotZgxp4Yvjh_MccUqYn8y4y3e1xwLbSqCzZRUlAX7c=",
+			"Name": "Гарячі страви"
+		},
+		"02": {
+			"Image": "https://media.istockphoto.com/photos/hearty-bowl-of-vegetable-soup-picture-id838779872?b=1&k=6&m=838779872&s=170667a&w=0&h=_1UfOQzLoGV2tgglw0EgLwljzW2_LubEHEDfZ7Eg7ek=",
+			"Name": "Супи"
+		},
+		"03": {
+			"Image": "https://www.foodiesfeed.com/wp-content/uploads/2018/06/salmon-413x275.jpg",
+			"Name": "Салати"
+		},
+		"04": {
+			"Image": "https://media.istockphoto.com/photos/canapes-for-party-picture-id923784110?b=1&k=6&m=923784110&s=170667a&w=0&h=Qw-JmcrfKKWlXMdbdEPyQEsrTA-Mjcj7Gv7PEsIvTc4=",
+			"Name": "Закуски"
+		},
+		"05": {
+			"Image": "https://www.foodiesfeed.com/wp-content/uploads/2015/03/basic-italian-pizza-margherita-413x275.jpg",
+			"Name": "Піцца"
+		},
+		"06": {
+			"Image": "https://media.istockphoto.com/photos/pasta-in-a-cast-iron-pan-shot-on-rustic-wooden-table-picture-id862762848?b=1&k=6&m=862762848&s=170667a&w=0&h=90losu7CVxsCt4HAFkLcaDueQeRwg5TfDmHLCTOKbZg=",
+			"Name": "Паста"
+		},
+		"07": {
+			"Image": "https://www.foodiesfeed.com/wp-content/uploads/2016/03/chicken-breast-with-spinach-and-potato-gnocchi-1-413x275.jpg",
+			"Name": "Страви з куркою"
+		},
+		"08": {
+			"Image": "https://www.foodiesfeed.com/wp-content/uploads/2017/09/sea-breams-413x620.jpg",
+			"Name": "Страви з рибою"
+		},
+		"09": {
+			"Image": "https://media.istockphoto.com/photos/traditional-berry-pie-picture-id895993902?b=1&k=6&m=895993902&s=170667a&w=0&h=JANxtDxmwU3zsaNlh1eB9DQPbQkCwJwv9lFG8gk2Uks=",
+			"Name": "Випічка"
+		},
+		"10": {
+			"Image": "https://media.istockphoto.com/photos/set-of-various-desserts-on-a-wooden-table-decorated-with-fruits-and-picture-id855025302?b=1&k=6&m=855025302&s=170667a&w=0&h=ilXPJ3ddciC-3gyH6gvuT5WsWe7NfP8M1l-qmJGE6T4=",
+			"Name": "Десерти"
+		},
+		"11": {
+			"Image": "https://www.foodiesfeed.com/wp-content/uploads/2015/04/frozen-mango-drink-in-a-restaurant-413x620.jpg",
+			"Name": "Напої"
+		}
+	},
+	"Foods": {
+		"01": {
+			"Description": "Інгрідієнти: \nМолоко\t150 г \nОливкова олія\t2 ст. л. \nСир твердий або напівтвердий\t150 г \nЯйця (великого розміру)\t2 шт.\nЗелень\tза смаком\nСіль \nОпис: \nПроварити овочі приблизно 5 хвилин. Деко змастити оливковою олією. Відварені овочі змішати з подрібненою зеленню, посолити. Викласти на деко шар з овочів. Натерти сир на тертушці. Збити в окремому посуді яйця з молоком, додати сир, ретельно перемішати. Вилити отриману суміш на шар з овочів. Випікати овочеву запіканку з сиром у духовці при температурі 180 градусів протягом 20 хвилин.",
+			"Discount": "0",
+			"FoodId": "01",
+			"Image": "https://rud.ua/uploads/under_recipe/zapekanka-iz-ovoschey-5.jpg",
+			"Ingredients": [
+				{
+					"Id": "1",
+					"count": 2,
+					"name": "ingredient1",
+					"parts": "abc:4.5|Вуг:33"
+				},
+				{
+					"Id": "2",
+					"count": 2,
+					"name": "test3",
+					"parts": "bbcc:4.5|Вуг:33"
+				}
+			],
+			"MenuId": "01",
+			"Name": "test"
+		},
+		"02": {
+			"Description": "Інгрідієнти: \nМолоко\t150 г \nОливкова олія\t2 ст. л. \nСир твердий або напівтвердий\t150 г \nЯйця (великого розміру)\t2 шт.\nЗелень\tза смаком\nСіль \nОпис: \nПроварити овочі приблизно 5 хвилин. Деко змастити оливковою олією. Відварені овочі змішати з подрібненою зеленню, посолити. Викласти на деко шар з овочів. Натерти сир на тертушці. Збити в окремому посуді яйця з молоком, додати сир, ретельно перемішати. Вилити отриману суміш на шар з овочів. Випікати овочеву запіканку з сиром у духовці при температурі 180 градусів протягом 20 хвилин.",
+			"Discount": "0",
+			"FoodId": "02",
+			"Image": "https://rud.ua/uploads/under_recipe/zapekanka-iz-ovoschey-5.jpg",
+			"Ingredients": [
+				{
+					"Id": "1",
+					"count": 2,
+					"name": "ingredient2",
+					"parts": "abc:4.5|Вуг:33"
+				},
+				{
+					"Id": "2",
+					"count": 2,
+					"name": "test4",
+					"parts": "bbcc:4.5|Вуг:33"
+				}
+			],
+			"MenuId": "01",
+			"Name": "test"
+		},
+		"03": {
+			"Description": "Інгрідієнти: \nМолоко\t150 г \nОливкова олія\t2 ст. л. \nСир твердий або напівтвердий\t150 г \nЯйця (великого розміру)\t2 шт.\nЗелень\tза смаком\nСіль \nОпис: \nПроварити овочі приблизно 5 хвилин. Деко змастити оливковою олією. Відварені овочі змішати з подрібненою зеленню, посолити. Викласти на деко шар з овочів. Натерти сир на тертушці. Збити в окремому посуді яйця з молоком, додати сир, ретельно перемішати. Вилити отриману суміш на шар з овочів. Випікати овочеву запіканку з сиром у духовці при температурі 180 градусів протягом 20 хвилин.",
+			"Discount": "0",
+			"FoodId": "03",
+			"Image": "https://rud.ua/uploads/under_recipe/zapekanka-iz-ovoschey-5.jpg",
+			"Ingredients": [
+				{
+					"Id": "1",
+					"count": 2,
+					"name": "aaa3",
+					"parts": "abc:4.5|Вуг:33"
+				},
+				{
+					"Id": "2",
+					"count": 2,
+					"name": "bbb3",
+					"parts": "bbcc:4.5|Вуг:33"
+				}
+			],
+			"MenuId": "01",
+			"Name": "test"
+		}
+	},
+	"Requests": {
+		"1543848404138": {
+			"address": "sgshs",
+			"name": " Dima",
+			"phone": "0660468962",
+			"status": "0",
+			"total": "$0"
+		},
+		"1543848970012": {
+			"address": "shshshshshs",
+			"name": " Dima",
+			"phone": "0660468962",
+			"status": "0",
+			"total": "$0"
+		}
+	},
+	"User": {
+		"123456789": {
+			"name": "marina",
+			"password": "1234",
+			"phone": "123456789"
+		},
+		"0506168358": {
+			"name": " Джорж",
+			"password": "12345678",
+			"phone": "0506168358"
+		},
+		"0660468962": {
+			"name": " Dima",
+			"password": "1234",
+			"phone": "0660468962"
+		},
+		"0954625851": {
+			"name": " Антон",
+			"password": "123",
+			"phone": "0954625851"
+		},
+		"0986587947": {
+			"name": " addy",
+			"password": "1234",
+			"phone": "0986587947"
+		},
+		"12345678996": {
+			"name": " what",
+			"password": "123",
+			"phone": "12345678996"
+		}
+	}
+}

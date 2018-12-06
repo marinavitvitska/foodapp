@@ -1,35 +1,35 @@
 {
   "project_info": {
-    "project_number": "6105064213",
-    "firebase_url": "https://foot-a096a.firebaseio.com",
-    "project_id": "foot-a096a",
-    "storage_bucket": "foot-a096a.appspot.com"
+    "project_number": "1085503542166",
+    "firebase_url": "https://foodlist-58e01.firebaseio.com",
+    "project_id": "foodlist-58e01",
+    "storage_bucket": "foodlist-58e01.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:6105064213:android:6164f55dea220928",
+        "mobilesdk_app_id": "1:1085503542166:android:6164f55dea220928",
         "android_client_info": {
           "package_name": "com.example.admin.foot"
         }
       },
       "oauth_client": [
         {
-          "client_id": "6105064213-7cg8f5s23k0r2f3f52cr9h5stug22kqh.apps.googleusercontent.com",
+          "client_id": "1085503542166-699vh6063k1bpbk1m28op7bojbaipc1o.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.admin.foot",
-            "certificate_hash": "8bff74536c0dc8b023fabd3859bd1ad35b866dc3"
+            "certificate_hash": "44871300e1b5e42c7737946a642c94ee8121a001"
           }
         },
         {
-          "client_id": "6105064213-9d51eoe9gf523tavn18j6bkb37vspjf5.apps.googleusercontent.com",
+          "client_id": "1085503542166-gldjnhtgmh8jam6fbaipgj4amdjg0atj.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBpJ7UoziaqMFApOHzSUbpRiHbi8LTyu1U"
+          "current_key": "AIzaSyCdeFsXnsR0PCAyzY-yhtj-UqlKdJpXxTg"
         }
       ],
       "services": {
@@ -40,7 +40,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "6105064213-9d51eoe9gf523tavn18j6bkb37vspjf5.apps.googleusercontent.com",
+              "client_id": "1085503542166-gldjnhtgmh8jam6fbaipgj4amdjg0atj.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
