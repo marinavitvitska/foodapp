@@ -11,6 +11,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class FoodInteractor {
@@ -35,7 +36,9 @@ public class FoodInteractor {
 
                     for (int i = 0; i < food.Ingredients.size(); i++) {
                         Ingredient ingredient = food.Ingredients.get(i);
-                        if (ingredient.name.contains(query)) {
+                        List<String> strings = Arrays.asList(query.split(","));
+
+                        if (strings.contains(ingredient.name)) {
                             foods.add(food);
                         }
                     }
