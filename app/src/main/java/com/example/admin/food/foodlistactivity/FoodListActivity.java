@@ -13,7 +13,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.admin.food.FoodDetail;
+import com.example.admin.food.food_detail.FoodDetail;
 import com.example.admin.food.Interface.ItemClickListener;
 import com.example.admin.food.Model.Food;
 import com.example.admin.food.R;

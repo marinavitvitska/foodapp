@@ -24,7 +24,7 @@
             android:name="com.example.admin.food.Home"
             android:label="@string/title_activity_home"
             android:theme="@style/AppTheme" />
-        <activity android:name="com.example.admin.food.FoodDetail" />
+        <activity android:name="com.example.admin.food.food_detail.FoodDetail" />
         <activity android:name="com.example.admin.food.foodlistactivity.FoodListActivity" />
         <activity android:name=".FoodList1"></activity>
     </application>

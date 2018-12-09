@@ -33,7 +33,7 @@ public class FoodInteractor {
                 for (final DataSnapshot child : dataSnapshot.getChildren()) {
                     final Food food = child.getValue(Food.class);
 
-                    for (int i = 1; i < food.Ingredients.size(); i++) {
+                    for (int i = 0; i < food.Ingredients.size(); i++) {
                         Ingredient ingredient = food.Ingredients.get(i);
                         if (ingredient.name.contains(query)) {
                             foods.add(food);
