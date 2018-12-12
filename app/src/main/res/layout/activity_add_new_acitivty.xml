@@ -27,7 +27,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"/>
+
     <Button
+        android:text="@string/save"
         android:id="@+id/bSave"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>

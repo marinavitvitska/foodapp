@@ -13,4 +13,9 @@ public class Ingredient {
     public Ingredient() {
     }
 
+    public Ingredient(final int count, final String name, final String parts) {
+        this.count = count;
+        this.name = name;
+        this.parts = parts;
+    }
 }

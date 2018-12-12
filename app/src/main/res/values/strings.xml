@@ -10,4 +10,6 @@
     <string name="action_settings">Settings</string>
     <string name="name">Name</string>
     <string name="add_a_new">Add a new</string>
+    <string name="add_new">Add new</string>
+    <string name="save">Save</string>
 </resources>
