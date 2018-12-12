@@ -100,7 +100,7 @@ public class FoodDetail extends AppCompatActivity {
                     }
                 }
 
-                componentAdapter.update(allComponents);
+                componentAdapter.update(uiComponents);
             }
 
             @Override

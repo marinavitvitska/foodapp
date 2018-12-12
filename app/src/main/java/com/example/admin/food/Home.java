@@ -22,6 +22,7 @@ import com.example.admin.food.Common.Common;
 import com.example.admin.food.Interface.ItemClickListener;
 import com.example.admin.food.Model.Category;
 import com.example.admin.food.ViewHolder.MenuViewHolder;
+import com.example.admin.food.add_new.AddNewAcitivty;
 import com.example.admin.food.foodlistactivity.FoodListActivity;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DatabaseReference;
@@ -30,6 +31,7 @@ import com.squareup.picasso.Picasso;
 
 public class Home extends AppCompatActivity implements
         NavigationView.OnNavigationItemSelectedListener {
+
     FirebaseDatabase database;
 
     DatabaseReference category;
@@ -76,6 +78,15 @@ public class Home extends AppCompatActivity implements
         layoutManager = new LinearLayoutManager(this);
         recycler_menu.setLayoutManager(layoutManager);
         loadMenu();
+
+        findViewById(R.id.addNew).setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(final View v) {
+                        Home.this.startActivity(new Intent(Home.this, AddNewAcitivty.class));
+                    }
+                }
+        );
     }
 
     private void loadMenu() {
@@ -113,15 +124,12 @@ public class Home extends AppCompatActivity implements
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-
         getMenuInflater().inflate(R.menu.home, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-
-
         return super.onOptionsItemSelected(item);
     }
 

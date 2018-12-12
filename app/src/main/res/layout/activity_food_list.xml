@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".foodlistactivity.FoodListActivity">
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".foodlistactivity.FoodListActivity">
     <com.mancj.materialsearchbar.MaterialSearchBar
-        android:layout_width="match_parent"
         android:id="@+id/searshBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:background="@color/orange"
         android:orientation="vertical"
-        app:mt_speechMode="false"
-        app:mt_textColor="@color/transparentBlack"
         app:mt_hint="Пошук"
-        android:layout_height="wrap_content"/>
+        app:mt_speechMode="false"
+        app:mt_textColor="@color/transparentBlack"/>
 
 
     <android.support.v7.widget.RecyclerView
@@ -23,9 +23,9 @@
         android:layout_height="628dp"
         android:layout_below="@id/searshBar"
         android:scrollbars="vertical"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp"
-        tools:ignore="MissingConstraints">
+        tools:layout_editor_absoluteY="0dp">
 
     </android.support.v7.widget.RecyclerView>
 </RelativeLayout>
