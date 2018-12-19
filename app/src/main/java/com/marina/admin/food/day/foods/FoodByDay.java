@@ -74,7 +74,7 @@ public class FoodByDay extends AppCompatActivity {
                             foodAdapter.add(foods);
                             rvFoods.setAdapter(foodAdapter);
 
-                            componentAdapter.update(calculate(foods));
+                            componentAdapter.update(calculate(foodAdapter.foods));
                         }
 
                         @Override public void onCancelled(@NonNull final DatabaseError databaseError) {

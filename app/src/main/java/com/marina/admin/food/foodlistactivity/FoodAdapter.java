@@ -19,7 +19,7 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodHolder> {
         this.onFoodClickListener = onFoodClickListener;
     }
 
-    private List<Food> foods = new ArrayList<>();
+    public List<Food> foods = new ArrayList<>();
 
     public void update(List<Food> food) {
         this.foods = food;
