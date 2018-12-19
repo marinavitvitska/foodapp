@@ -3,25 +3,27 @@ package com.marina.admin.food.food_detail;
 
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.marina.admin.food.Model.Food;
-import com.marina.admin.food.Model.Ingredient;
-import com.marina.admin.food.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.marina.admin.food.Model.Food;
+import com.marina.admin.food.Model.Ingredient;
+import com.marina.admin.food.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 public class FoodDetail extends AppCompatActivity {
     TextView food_name, food_price, food_Description;
@@ -29,8 +31,6 @@ public class FoodDetail extends AppCompatActivity {
     ImageView food_Image;
 
     CollapsingToolbarLayout collapsingToolbarLayout;
-
-    FloatingActionButton btnCart;
 
     String foodId = "";
 
@@ -48,7 +48,6 @@ public class FoodDetail extends AppCompatActivity {
         setContentView(R.layout.activity_food_detail);
         database = FirebaseDatabase.getInstance();
         foods = database.getReference("Foods");
-        btnCart = findViewById(R.id.btnCart);
 
         rvComponents = findViewById(R.id.rvComponents);
         rvComponents.setLayoutManager(new LinearLayoutManager(this));
@@ -67,6 +66,13 @@ public class FoodDetail extends AppCompatActivity {
         if (!foodId.isEmpty()) {
             getDetailFood(foodId);
         }
+
+        findViewById(R.id.add).setOnClickListener(new View.OnClickListener() {
+            @Override public void onClick(final View v) {
+                String date = ((EditText) findViewById(R.id.date)).getText().toString();
+                FirebaseDatabase.getInstance().getReference("days").child(date).child(UUID.randomUUID().toString()).setValue(foodId);
+            }
+        });
     }
 
     private void getDetailFood(String foodId) {

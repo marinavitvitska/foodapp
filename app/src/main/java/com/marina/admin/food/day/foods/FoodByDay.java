@@ -9,7 +9,6 @@ import android.support.v7.widget.RecyclerView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.GenericTypeIndicator;
 import com.google.firebase.database.ValueEventListener;
 import com.marina.admin.food.Model.Food;
 import com.marina.admin.food.Model.Ingredient;
@@ -20,6 +19,8 @@ import com.marina.admin.food.foodlistactivity.FoodAdapter;
 import com.marina.admin.food.foodlistactivity.FoodHolder;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
 
 public class FoodByDay extends AppCompatActivity {
@@ -42,9 +43,7 @@ public class FoodByDay extends AppCompatActivity {
         FirebaseDatabase.getInstance().getReference("days").child(day).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull final DataSnapshot dataSnapshot) {
-                GenericTypeIndicator<List<String>> t = new GenericTypeIndicator<List<String>>() {
-                };
-                final List<String> messages = dataSnapshot.getValue(t);
+                final Collection<String> messages = ((HashMap<String, String>) dataSnapshot.getValue()).values();
 
                 FirebaseDatabase.getInstance().getReference("Foods").addValueEventListener(new ValueEventListener() {
                     @Override public void onDataChange(@NonNull final DataSnapshot dataSnapshot) {
