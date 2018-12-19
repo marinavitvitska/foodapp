@@ -29,6 +29,10 @@
         <activity android:name=".FoodList1"/>
         <activity android:name=".add_new.AddNewAcitivty">
         </activity>
+        <activity android:name=".day.DaysActivity">
+        </activity>
+        <activity android:name=".day.foods.FoodByDay">
+        </activity>
     </application>
 
 </manifest>

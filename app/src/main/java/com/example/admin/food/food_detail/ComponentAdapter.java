@@ -14,7 +14,7 @@ public class ComponentAdapter extends RecyclerView.Adapter<ComponentViewHolder> 
 
     private List<Component> componentList = new ArrayList<>();
 
-    void update(List<Component> componentList) {
+    public void update(List<Component> componentList) {
         this.componentList = componentList;
         notifyDataSetChanged();
     }

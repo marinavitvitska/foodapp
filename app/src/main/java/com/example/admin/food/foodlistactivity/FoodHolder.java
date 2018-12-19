@@ -12,7 +12,7 @@ import com.squareup.picasso.Picasso;
 
 public class FoodHolder extends RecyclerView.ViewHolder {
 
-    interface OnFoodClickListener {
+    public interface OnFoodClickListener {
         void onClick(Food food);
     }
 

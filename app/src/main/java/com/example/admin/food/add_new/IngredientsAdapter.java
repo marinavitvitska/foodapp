@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 public class IngredientsAdapter extends RecyclerView.Adapter {
 
-    ArrayList<Ingredient> ingredientList = new ArrayList<>();
+    public ArrayList<Ingredient> ingredientList = new ArrayList<>();
 
     @NonNull @Override public RecyclerView.ViewHolder onCreateViewHolder(@NonNull final ViewGroup viewGroup, final int i) {
         if (i == R.layout.item_ingredient) {
