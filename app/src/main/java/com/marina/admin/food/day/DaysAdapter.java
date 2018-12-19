@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import com.marina.admin.food.R;
@@ -14,7 +15,7 @@ import java.util.ArrayList;
 public class DaysAdapter extends RecyclerView.Adapter<DaysAdapter.DayViewHolder> {
 
     interface OnDayClickListener {
-        void onClick(String day);
+        void onClick(String day, Boolean isChecked);
     }
 
     public DaysAdapter(final OnDayClickListener onDayClickListener) {
@@ -52,7 +53,13 @@ public class DaysAdapter extends RecyclerView.Adapter<DaysAdapter.DayViewHolder>
             ((TextView) itemView.findViewById(R.id.tvDay)).setText(day);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override public void onClick(final View v) {
-                    onDayClickListener.onClick(day);
+                    CheckBox checkBox = itemView.findViewById(R.id.checkbox);
+                    if (checkBox.isChecked()) {
+                        checkBox.setChecked(false);
+                    } else {
+                        checkBox.setChecked(true);
+                    }
+                    onDayClickListener.onClick(day, checkBox.isChecked());
                 }
             });
         }

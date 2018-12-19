@@ -26,6 +26,11 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodHolder> {
         notifyDataSetChanged();
     }
 
+    public void add(List<Food> food) {
+        this.foods.addAll(food);
+        notifyDataSetChanged();
+    }
+
     @NonNull @Override public FoodHolder onCreateViewHolder(@NonNull final ViewGroup viewGroup, final int i) {
         return new FoodHolder(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.food_item, viewGroup, false));
     }

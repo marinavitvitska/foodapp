@@ -106,6 +106,12 @@ public class FoodDetail extends AppCompatActivity {
                     }
                 }
 
+                float kal = 0;
+                for (final Component uiComponent : uiComponents) {
+                    kal += uiComponent.value;
+                }
+
+                food_price.setText(String.valueOf(kal));
                 componentAdapter.update(uiComponents);
             }
 

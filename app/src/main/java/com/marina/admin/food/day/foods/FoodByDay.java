@@ -38,44 +38,51 @@ public class FoodByDay extends AppCompatActivity {
         final RecyclerView rvFoods = findViewById(R.id.rvFoods);
         rvFoods.setLayoutManager(new LinearLayoutManager(this));
 
-        final String day = getIntent().getStringExtra(KEY_DAY);
+        final ArrayList<String> day = getIntent().getStringArrayListExtra(KEY_DAY);
 
-        FirebaseDatabase.getInstance().getReference("days").child(day).addValueEventListener(new ValueEventListener() {
+        final FoodAdapter foodAdapter = new FoodAdapter(new FoodHolder.OnFoodClickListener() {
+            @Override
+            public void onClick(final Food food) {
+
+            }
+        });
+
+        rvIngeredients.setAdapter(componentAdapter);
+
+        FirebaseDatabase.getInstance().getReference("days").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull final DataSnapshot dataSnapshot) {
-                final Collection<String> messages = ((HashMap<String, String>) dataSnapshot.getValue()).values();
+                for (final DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    if (!day.contains(snapshot.getKey())) {
+                        continue;
+                    }
 
-                FirebaseDatabase.getInstance().getReference("Foods").addValueEventListener(new ValueEventListener() {
-                    @Override public void onDataChange(@NonNull final DataSnapshot dataSnapshot) {
-                        final ArrayList<Food> foods = new ArrayList<>();
+                    final Collection<String> foodIds = ((HashMap<String, String>) snapshot.getValue()).values();
 
-                        for (final DataSnapshot child : dataSnapshot.getChildren()) {
-                            final Food food = child.getValue(Food.class);
+                    FirebaseDatabase.getInstance().getReference("Foods").addValueEventListener(new ValueEventListener() {
+                        @Override public void onDataChange(@NonNull final DataSnapshot dataSnapshot) {
+                            final ArrayList<Food> foods = new ArrayList<>();
 
-                            if (messages != null && messages.contains(food.getFoodId())) {
-                                foods.add(food);
+                            for (final DataSnapshot child : dataSnapshot.getChildren()) {
+                                final Food food = child.getValue(Food.class);
+
+                                if ((foodIds != null) && foodIds.contains(food.getFoodId())) {
+                                    foods.add(food);
+                                }
                             }
+
+                            foodAdapter.add(foods);
+                            rvFoods.setAdapter(foodAdapter);
+
+                            componentAdapter.update(calculate(foods));
                         }
 
-                        FoodAdapter foodAdapter = new FoodAdapter(new FoodHolder.OnFoodClickListener() {
-                            @Override
-                            public void onClick(final Food food) {
+                        @Override public void onCancelled(@NonNull final DatabaseError databaseError) {
 
-                            }
-                        });
+                        }
+                    });
 
-                        foodAdapter.update(foods);
-                        rvFoods.setAdapter(foodAdapter);
-
-                        componentAdapter.update(calculate(foods));
-
-                        rvIngeredients.setAdapter(componentAdapter);
-                    }
-
-                    @Override public void onCancelled(@NonNull final DatabaseError databaseError) {
-
-                    }
-                });
+                }
             }
 
             @Override
@@ -115,9 +122,9 @@ public class FoodByDay extends AppCompatActivity {
 
     static final String KEY_DAY = "key_day";
 
-    static public Bundle getBundle(String day) {
+    static public Bundle getBundle(ArrayList<String> day) {
         Bundle bundle = new Bundle();
-        bundle.putString(KEY_DAY, day);
+        bundle.putStringArrayList(KEY_DAY, day);
         return bundle;
     }
 }
