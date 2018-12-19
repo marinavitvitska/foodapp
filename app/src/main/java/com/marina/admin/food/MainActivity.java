@@ -20,8 +20,6 @@ public class MainActivity extends AppCompatActivity {
         btnSignIn = findViewById(R.id.btnSignIn);
         btnSignUp = findViewById(R.id.btnSignUp);
         txtSlogin = findViewById(R.id.txtslogin);
-        // Typeface face=Typeface.createFromAsset(getAssets(),"fonts/NABILA.TTF");
-        //txtSlogin.setTypeface(face);
     }
 
     public void signUp(View view) {
