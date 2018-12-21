@@ -51,6 +51,7 @@ public class DaysAdapter extends RecyclerView.Adapter<DaysAdapter.DayViewHolder>
 
         public void bind(final String day, final OnDayClickListener onDayClickListener) {
             ((TextView) itemView.findViewById(R.id.tvDay)).setText(day);
+            itemView.findViewById(R.id.checkbox).setClickable(false);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override public void onClick(final View v) {
                     CheckBox checkBox = itemView.findViewById(R.id.checkbox);

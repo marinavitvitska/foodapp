@@ -21,6 +21,8 @@ public class DaysActivity extends AppCompatActivity {
 
     RecyclerView rvDays;
 
+    final ArrayList<String> dates = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,8 +30,6 @@ public class DaysActivity extends AppCompatActivity {
 
         rvDays = findViewById(R.id.rvDays);
         rvDays.setLayoutManager(new LinearLayoutManager(this));
-
-        final ArrayList<String> dates = new ArrayList<>();
 
         final DaysAdapter daysAdapter = new DaysAdapter(new DaysAdapter.OnDayClickListener() {
             @Override

@@ -11,13 +11,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
 
-import com.marina.admin.food.food_detail.FoodDetail;
-import com.marina.admin.food.Interface.ItemClickListener;
-import com.marina.admin.food.Model.Food;
-import com.marina.admin.food.R;
-import com.marina.admin.food.ViewHolder.FoodViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -25,6 +19,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.mancj.materialsearchbar.MaterialSearchBar;
+import com.marina.admin.food.Interface.ItemClickListener;
+import com.marina.admin.food.Model.Food;
+import com.marina.admin.food.R;
+import com.marina.admin.food.ViewHolder.FoodViewHolder;
+import com.marina.admin.food.food_detail.FoodDetail;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -169,7 +168,6 @@ public class FoodListActivity extends AppCompatActivity implements FoodHolder.On
                 viewHolder.setItemClickListener(new ItemClickListener() {
                     @Override
                     public void onClick(View view, int position, boolean isLongClick) {
-                        Toast.makeText(FoodListActivity.this, "" + local.getName(), Toast.LENGTH_SHORT).show();
                         Intent foodDetail = new Intent(FoodListActivity.this, FoodDetail.class);
                         foodDetail.putExtra("FoodId", adapter.getRef(position).getKey());
                         startActivity(foodDetail);
