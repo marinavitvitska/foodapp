@@ -26,7 +26,7 @@ public class FoodHolder extends RecyclerView.ViewHolder {
 
         tvName.setText(food.getName());
 
-        if (food.getImage() != null) {
+        if (food.getImage() != null && !food.getImage().isEmpty()) {
             Picasso.with(itemView.getContext())
                     .load(food.getImage())
                     .into(image);
