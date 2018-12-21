@@ -26,6 +26,7 @@ public class AddNewAcitivty extends AppCompatActivity {
         final EditText tvImage = findViewById(R.id.tvImage);
         final EditText tvDescription = findViewById(R.id.tvDescription);
         final EditText tvDiscount = findViewById(R.id.tvDiscount);
+        final EditText tvMenu = findViewById(R.id.tvMenu);
         final RecyclerView rvList = findViewById(R.id.list);
 
         Button bSave = findViewById(R.id.bSave);
@@ -45,7 +46,7 @@ public class AddNewAcitivty extends AppCompatActivity {
                         tvImage.getText().toString(),
                         tvDescription.getText().toString(),
                         tvDiscount.getText().toString(),
-                        "0", id, ingredientsAdapter.ingredientList);
+                        tvMenu.getText().toString(), id, ingredientsAdapter.ingredientList);
 
                 FirebaseDatabase.getInstance().getReference("Foods").child(id).setValue(food);
 
