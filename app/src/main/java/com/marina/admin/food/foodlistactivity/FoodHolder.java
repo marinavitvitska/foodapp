@@ -26,9 +26,11 @@ public class FoodHolder extends RecyclerView.ViewHolder {
 
         tvName.setText(food.getName());
 
-        Picasso.with(itemView.getContext())
-                .load(food.getImage())
-                .into(image);
+        if (food.getImage() != null) {
+            Picasso.with(itemView.getContext())
+                    .load(food.getImage())
+                    .into(image);
+        }
 
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(final View v) {

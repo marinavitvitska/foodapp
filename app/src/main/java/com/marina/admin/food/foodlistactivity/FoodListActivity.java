@@ -9,22 +9,16 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
-import android.view.View;
 
-import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.mancj.materialsearchbar.MaterialSearchBar;
-import com.marina.admin.food.Interface.ItemClickListener;
 import com.marina.admin.food.Model.Food;
 import com.marina.admin.food.R;
-import com.marina.admin.food.ViewHolder.FoodViewHolder;
 import com.marina.admin.food.food_detail.FoodDetail;
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,7 +34,7 @@ public class FoodListActivity extends AppCompatActivity implements FoodHolder.On
 
     String categoryId = "";
 
-    FirebaseRecyclerAdapter<Food, FoodViewHolder> adapter;
+    FoodAdapter adapter;
 
     FoodAdapter searchadapter = new FoodAdapter(this);
 
@@ -65,8 +59,8 @@ public class FoodListActivity extends AppCompatActivity implements FoodHolder.On
             categoryId = getIntent().getStringExtra("CategoryId");
         }
 
-        if (!categoryId.isEmpty() && categoryId != null) {
-            loadListFood(categoryId);
+        if (categoryId != null && !categoryId.isEmpty()) {
+            loadListFood();
         }
 
         materialSearchBar = findViewById(R.id.searshBar);
@@ -82,7 +76,7 @@ public class FoodListActivity extends AppCompatActivity implements FoodHolder.On
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                List<String> suggest = new ArrayList<String>();
+                List<String> suggest = new ArrayList<>();
                 for (String search : suggestList) {
                     if (search.toLowerCase().contains(materialSearchBar.getText().toLowerCase())) {
                         suggest.add(search);
@@ -153,30 +147,39 @@ public class FoodListActivity extends AppCompatActivity implements FoodHolder.On
     }
 
 
-    private void loadListFood(String CategoryId) {
-        adapter = new FirebaseRecyclerAdapter<Food, FoodViewHolder>(Food.class,
-                R.layout.food_item,
-                FoodViewHolder.class,
-                foodList.orderByChild("MenuId").equalTo(categoryId)) {
-            @Override
-            protected void populateViewHolder(FoodViewHolder viewHolder, Food model, int position) {
-                viewHolder.food_name.setText(model.getName());
-                //viewHolder.food_name.setText(model.getName());
-                Picasso.with(getBaseContext()).load(model.getImage())
-                        .into(viewHolder.food_image);
-                final Food local = model;
-                viewHolder.setItemClickListener(new ItemClickListener() {
-                    @Override
-                    public void onClick(View view, int position, boolean isLongClick) {
-                        Intent foodDetail = new Intent(FoodListActivity.this, FoodDetail.class);
-                        foodDetail.putExtra("FoodId", adapter.getRef(position).getKey());
-                        startActivity(foodDetail);
+    private void loadListFood() {
+        FirebaseDatabase.getInstance().getReference("Foods").addValueEventListener(new ValueEventListener() {
+            @Override public void onDataChange(@NonNull final DataSnapshot dataSnapshot) {
+                final ArrayList<Food> foods = new ArrayList<>();
+
+                for (final DataSnapshot child : dataSnapshot.getChildren()) {
+                    final Food food = child.getValue(Food.class);
+
+                    if (food.getMenuId().equals(categoryId)) {
+                        foods.add(food);
+                    }
+                }
+
+                adapter = new FoodAdapter(new FoodHolder.OnFoodClickListener() {
+                    @Override public void onClick(final Food food) {
+                        callFood(food);
                     }
                 });
-            }
-        };
-        Log.d("TAG", "" + adapter.getItemCount());
 
-        recyclerView.setAdapter(adapter);
+                adapter.update(foods);
+
+                recyclerView.setAdapter(adapter);
+            }
+
+            @Override public void onCancelled(@NonNull final DatabaseError databaseError) {
+
+            }
+        });
+    }
+
+    private void callFood(Food food) {
+        Intent foodDetail = new Intent(FoodListActivity.this, FoodDetail.class);
+        foodDetail.putExtra("FoodId", food.getFoodId());
+        startActivity(foodDetail);
     }
 }
